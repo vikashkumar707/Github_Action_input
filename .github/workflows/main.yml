@@ -1,0 +1,34 @@
+
+name : VK_workflows
+
+on:
+ workflow_dispatch:
+      inputs:
+        input1:
+          description: 'Enter first number:'     
+          required: true
+    
+        input2:
+          description: 'Enter second number:'     
+          required: true
+
+env:
+  a: ${{github.event.inputs.input1}}
+  b: ${{github.event.inputs.input2}}
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+  
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+      - run:  |
+          cd Python
+          python fmultiply.py $num1 $num2
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, ubuntu!
