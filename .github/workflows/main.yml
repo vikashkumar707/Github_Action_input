@@ -28,7 +28,7 @@ jobs:
           python-version: '3.10' 
       - run:  |
           cd Python
-          python fmultiply.py $num1 $num2
+          python fmultiply.py $a $b
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, ubuntu!
