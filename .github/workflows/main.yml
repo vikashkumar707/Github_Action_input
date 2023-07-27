@@ -2,7 +2,7 @@
 name : VK_workflows
 
 on:
- workflow_dispatch:
+ repository_dispatch:
       inputs:
         input1:
           description: 'Enter first number:'     
